@@ -2,7 +2,7 @@
   <section>
     <base-card>
       <h2>Register as a coach</h2>
-      <CoachForm @save-data="saveData" />
+      <coach-form @save-data="saveData"></coach-form>
     </base-card>
   </section>
 </template>
@@ -16,6 +16,7 @@ export default {
   methods: {
     saveData(data) {
       this.$store.dispatch('coaches/registerCoach', data);
+      this.$router.replace('/coaches');
     },
   },
 };
