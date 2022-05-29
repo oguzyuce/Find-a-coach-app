@@ -10,8 +10,7 @@
           :key="req.id"
           :email="req.userEmail"
           :message="req.message"
-        >
-        </request-item>
+        ></request-item>
       </ul>
       <h3 v-else>You have not received any request yet!</h3>
     </base-card>
@@ -20,12 +19,10 @@
 
 <script>
 import RequestItem from '../../components/requests/RequestItem.vue';
+
 export default {
   components: {
     RequestItem,
-  },
-  data() {
-    return {};
   },
   computed: {
     receivedRequests() {
