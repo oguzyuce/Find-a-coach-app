@@ -11,7 +11,7 @@ export default {
 
         const token = context.rootGetters.token
 
-        const response = await fetch(`https://new-finding-coach-default-rtdb.europe-west1.firebasedatabase.app/coaches/${userId}.json?auth=` + token, {
+        const response = await fetch(`api/coaches/${userId}.json?auth=` + token, {
             method: 'PUT',
             body: JSON.stringify(coachData)
         })
@@ -30,7 +30,7 @@ export default {
         if (!payload.forceRefresh && !context.getters.shouldUpdate) {
             return;
         }
-        const response = await fetch(`https://new-finding-coach-default-rtdb.europe-west1.firebasedatabase.app/coaches.json`)
+        const response = await fetch(`api`)
         const responseData = await response.json();
 
         if (!response.ok) {
